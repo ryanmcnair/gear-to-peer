@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Gear to Peer - Musical instrument database, for musicians
+I plan to build a mobile app for musicians to store data and keep track of their gear. This could be very useful for insurance purposes in case of theft or to show off new acquisitions. Users will log into the app and they will be able to view their collection or add to it. There will be sections for each instrument (guitar, bass, drums, pedals, amps, etc) in the collection view. Users will add instrument information, brand, year, color, serial number and add pictures of the instrument as well as receipt image. There would also be a section to store links to YouTube videos or Soundcloud audio of users playing the instrument. Users can also share data in an unauthenticated view, which excludes receipt and serial number. On a larger scale, road crew of national/touring acts could use this app to make notes on string gauge and setup or just general preferences of the performer/musician.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I follow many musicians on Instagram and Twitter and very often someone will post about how a tour van was broken into and gear was stolen. Usually, the posts include just a list of items with fairly vague descriptions. It would be great to store actual pictures and descriptions online in case of theft or fire. Also, this would be a way to share new gear acquisitions with friends and colleagues. There is one other guitar tracker site available but it’s not mobile and its focus is on maintenance.
 
-## Available Scripts
+This project will definitely include many challenges as I haven’t designed a mobile specific app to date. I plan on incorporating mobile features like access to the camera roll and sending an email/text message from the app. If time permits, I’d like to access the camera as well.
 
-In the project directory, you can run:
+MVP includes:
+- Users sign in using Google authentication
+- Create instrument collections
+- Add instruments within the collection
+- Update instrument profiles
+- Delete instrument profiles or archive them
+- Authenticated view of instruments
+- Unauthenticated view of instruments, which excludes receipt image and serial numbers
+- Export feature to share instrument, in both authenticated (for insurance) and unauthenticated (for friends) views
 
-### `npm start`
+Stretch goals include:
+- Create a social network where users can “friend” each other and view collections (excluding receipts and serial numbers) within the app
+- Have an alert show when a friend adds a new item.
+- Include a “Tour” section that users can move pieces of gear into when on tour. They can add notes or specifications for road crew to access while on tour but then delete or archive once the tour ends.
+- Allow app to access camera and take photos directly within app.
+- Set up themes based on iconic guitars and players. Such as, Van Halen theme, Pantera theme
+- Import data from Reverb.com, watch list and purchases (not sure if this is an option)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ERD
+[Link](https://lucid.app/lucidchart/invitations/accept/fc576bd8-3550-4e4d-a344-e10a36e53c7e)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Gear to Peer ERD](https://user-images.githubusercontent.com/67588177/99994125-3b5cd180-2d7e-11eb-8d41-fc7a01fb89e9.png)
