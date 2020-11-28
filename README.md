@@ -23,6 +23,11 @@ Stretch goals include:
 - Set up themes based on iconic guitars and players. Such as, Van Halen theme, Pantera theme
 - Import data from Reverb.com, watch list and purchases (not sure if this is an option)
 
+## Wireframe
+[Link](https://www.figma.com/file/5Nj2gvH6QGMjEveFnYoTyG/GeartoPeer?node-id=0%3A1)
+
+![Gear to Peer Wireframe](https://user-images.githubusercontent.com/67588177/100519413-599b4680-315d-11eb-8c94-ee142aab49da.png)
+
 ## ERD
 [Link](https://lucid.app/lucidchart/invitations/accept/fc576bd8-3550-4e4d-a344-e10a36e53c7e)
 
