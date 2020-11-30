@@ -1,34 +1,25 @@
 # Gear to Peer - Musical instrument database, for musicians
-I plan to build a mobile app for musicians to store data and keep track of their gear. This could be very useful for insurance purposes in case of theft or to show off new acquisitions. Users will log into the app and they will be able to view their collection or add to it. There will be sections for each instrument (guitar, bass, drums, pedals, amps, etc) in the collection view. Users will add instrument information, brand, year, color, serial number and add pictures of the instrument as well as receipt image. There would also be a section to store links to YouTube videos or Soundcloud audio of users playing the instrument. Users can also share data in an unauthenticated view, which excludes receipt and serial number. On a larger scale, road crew of national/touring acts could use this app to make notes on string gauge and setup or just general preferences of the performer/musician.
+Gear to Peer is a site designed for musicians to store and track data related to their musical equipment.
 
-I follow many musicians on Instagram and Twitter and very often someone will post about how a tour van was broken into and gear was stolen. Usually, the posts include just a list of items with fairly vague descriptions. It would be great to store actual pictures and descriptions online in case of theft or fire. Also, this would be a way to share new gear acquisitions with friends and colleagues. There is one other guitar tracker site available but it’s not mobile and its focus is on maintenance.
+Upon logging in with Google authentication, the user will come to their home/collection page. Here they will see a welcome message if no gear is available, with options to add new items. When the user selects the "+" icon to add an item they will be taken to the "Add to Collection" form where they will be asked to input gear data. 
 
-This project will definitely include many challenges as I haven’t designed a mobile specific app to date. I plan on incorporating mobile features like access to the camera roll and sending an email/text message from the app. If time permits, I’d like to access the camera as well.
+On the form, there is a dropdown menu to specify the category of the new item at the top. They will select - Guitar, Bass, Keyboard, Drums, Microphones, Amplifiers, Recording, Pedals, or Misc. Next they will input the item's brand, model and year (required). There are two more options to add general notes and maintenence notes. There are three private fields on the form - Serial number, amount paid and amount sold. These fields will not transfer to the tour section and will only be visible by the primary user.
 
-MVP includes:
-- Users sign in using Google authentication
-- Create instrument collections
-- Add instruments within the collection
-- Update instrument profiles
-- Delete instrument profiles or archive them
-- Authenticated view of instruments
-- Unauthenticated view of instruments, which excludes receipt image and serial numbers
-- Export feature to share instrument, in both authenticated (for insurance) and unauthenticated (for friends) views
+Once the new item has been added, users will be taken to the "gear view". Here they will be able to view, update or delete/archive the item. I want to encourage users to archive their items instead of deleting them. It's always fun to look back at old items and see how much you paid for gear. But the delete option will be available.
 
-Stretch goals include:
-- Create a social network where users can “friend” each other and view collections (excluding receipts and serial numbers) within the app
-- Have an alert show when a friend adds a new item.
-- Include a “Tour” section that users can move pieces of gear into when on tour. They can add notes or specifications for road crew to access while on tour but then delete or archive once the tour ends.
-- Allow app to access camera and take photos directly within app.
-- Set up themes based on iconic guitars and players. Such as, Van Halen theme, Pantera theme
-- Import data from Reverb.com, watch list and purchases (not sure if this is an option)
+The tour section is a way to track gear used in a tour or temporary situation. When you click on Tour in the navbar you'll see boards similar to the collection view and an option to add a new tour at the top. A modal will appear when the new tour option is selected, showing available gear with a radial button next to the item thumbnail and description. Once the user has selected the items they like, they will add them to the tour by clicking an "add to tour" button at the top.
+
+When items are in the tour section, users will be able to view the selected gear and also add "tour notes" to the items. Tour notes will only be available in the tour section and will not modify the existing entry within the collection.
 
 ## Wireframe
 [Link](https://www.figma.com/file/5Nj2gvH6QGMjEveFnYoTyG/GeartoPeer?node-id=0%3A1)
 
-![Gear to Peer Wireframe](https://user-images.githubusercontent.com/67588177/100519413-599b4680-315d-11eb-8c94-ee142aab49da.png)
+![Gear to Peer Wireframe](https://user-images.githubusercontent.com/67588177/100633044-2f7b8d00-32f3-11eb-9ad2-030aa74f584d.png)
 
 ## ERD
 [Link](https://lucid.app/lucidchart/invitations/accept/fc576bd8-3550-4e4d-a344-e10a36e53c7e)
 
-![Gear to Peer ERD](https://user-images.githubusercontent.com/67588177/99994125-3b5cd180-2d7e-11eb-8d41-fc7a01fb89e9.png)
+![Gear to Peer ERD](https://user-images.githubusercontent.com/67588177/100633010-27bbe880-32f3-11eb-92fc-9ee23889c981.png)
+
+## Video walkthrough
+[Link](https://www.loom.com/share/d0c80d13fdc94d67b151be54075ef261)
