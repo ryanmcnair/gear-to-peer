@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { Button } from 'reactstrap';
 
 export default class Auth extends React.Component {
   loginClickEvent = (e) => {
@@ -12,7 +13,7 @@ export default class Auth extends React.Component {
   render() {
     return (
       <div className='Auth'>
-        <button className='btn btn-secondary' onClick={this.loginClickEvent}>Sign In</button>
+        <Button className='btn btn-secondary' size='lg' color='success' id='box' onClick={this.loginClickEvent}>Sign In</Button>
       </div>
     );
   }
