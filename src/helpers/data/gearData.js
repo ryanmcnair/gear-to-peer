@@ -8,5 +8,15 @@ const getAllGear = () => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
+const getSingleGear = (gearId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/gear/${gearId}.json`)
+    .then((response) => {
+      resolve(response.data);
+    })
+    .catch((error) => reject(error));
+});
+
+const deleteGear = (gearId) => axios.delete(`${baseUrl}/gear/${gearId}.json`);
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAllGear };
+export default { getAllGear, deleteGear, getSingleGear };
