@@ -16,7 +16,15 @@ const getSingleGear = (gearId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const updateGear = (data) => new Promise((resolve, reject) => {
+  axios.patch(`${baseUrl}/gear/${data.firebaseKey}.json`, data)
+    .then(resolve)
+    .catch((error) => reject(error));
+});
+
 const deleteGear = (gearId) => axios.delete(`${baseUrl}/gear/${gearId}.json`);
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAllGear, deleteGear, getSingleGear };
+export default {
+  getAllGear, deleteGear, getSingleGear, updateGear,
+};
