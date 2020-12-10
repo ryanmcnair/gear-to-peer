@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Loader from './Loader';
 import gearData from '../helpers/data/gearData';
 import GearCard from './GearCard';
@@ -39,6 +40,12 @@ export default class CollectionContainer extends Component {
           <Loader />
         ) : (
           <>
+            <Link
+              className='btn btn-primary'
+              to={'gear-form'}
+            >
+              Add Gear
+            </Link>
             <div className='d-flex flex-wrap container'>{showGear()}</div>
           </>
         )}
