@@ -25,7 +25,7 @@ export default function Routes({ user }) {
       <Route
       exact
       path='/gear-form'
-      component={() => <GearForm />} />
+      component={(props) => <GearForm user={user} {...props} />} />
       <Route component={NotFound} />
     </Switch>
   );
