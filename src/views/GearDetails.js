@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import gearData from '../helpers/data/gearData';
+import AppModal from '../components/AppModal';
+import GearForm from '../components/GearForm';
 
 class GearDetails extends Component {
   state = {
@@ -30,12 +32,16 @@ class GearDetails extends Component {
     return (
       <div className='single-gear-view'>
         <h1>{gear.brand}</h1>
-        <button
-          className='btn btn-danger m-2'
-          onClick={this.removeGear}
-        >
+        <button className='btn btn-danger m-2' onClick={this.removeGear}>
           Delete
         </button>
+        {this.props.user.uid === gear.userId && (
+          <AppModal title={'Update Gear'} buttonLabel={'Update Gear'}>
+            {Object.keys(gear).length && (
+              <GearForm gear={gear} onUpdate={this.getSingleGear} />
+            )}
+          </AppModal>
+        )}
       </div>
     );
   }
