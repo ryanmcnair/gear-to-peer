@@ -63,12 +63,20 @@ class GearForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    gearData.createGear(this.state)
-      .then((response) => {
-        this.getAllGear();
-        this.addGearId(response.data.name);
-        this.props.history.push('/collection');
+
+    if (this.state.firebaseKey === '') {
+      gearData.createGear(this.state)
+        .then((response) => {
+          this.getAllGear();
+          this.addGearId(response.data.name);
+          this.props.history.push('/collection');
+        });
+    } else {
+      gearData.updateGear(this.state).then(() => {
+        this.props.onUpdate?.(this.state.firebaseKey);
       });
+      this.props.toggle();
+    }
   };
 
   render() {
