@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button, Modal, ModalHeader, ModalBody, ModalFooter,
+  Button, Modal, ModalHeader, ModalBody,
 } from 'reactstrap';
 
 const AppModal = (props) => {
@@ -18,11 +18,6 @@ const AppModal = (props) => {
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>{React.cloneElement(props.children, { toggle })}</ModalBody>
-        <ModalFooter>
-          <Button color='secondary' onClick={toggle}>
-            Cancel
-          </Button>
-        </ModalFooter>
       </Modal>
     </div>
   );
