@@ -6,16 +6,16 @@ import gearData from '../helpers/data/gearData';
 
 class GearForm extends Component {
   state = {
-    brand: this.props.pin?.brand || '',
-    category: this.props.pin?.category || '',
-    firebaseKey: this.props.pin?.firebaseKey || '',
-    id: this.props.pin?.id || '',
-    image: this.props.pin?.image || '',
-    main_notes: this.props.pin?.main_notes || '',
-    model: this.props.pin?.model || '',
-    other_notes: this.props.pin?.other_notes || '',
-    serial_number: this.props.pin?.serial_number || '',
-    year: this.props.pin?.year || '',
+    brand: this.props.gear?.brand || '',
+    category: this.props.gear?.category || '',
+    firebaseKey: this.props.gear?.firebaseKey || '',
+    id: this.props.gear?.id || '',
+    image: this.props.gear?.image || '',
+    main_notes: this.props.gear?.main_notes || '',
+    model: this.props.gear?.model || '',
+    other_notes: this.props.gear?.other_notes || '',
+    serial_number: this.props.gear?.serial_number || '',
+    year: this.props.gear?.year || '',
   };
 
   componentDidMount() {
@@ -61,12 +61,13 @@ class GearForm extends Component {
     });
   };
 
-  hanleSubmit = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     gearData.createGear(this.state)
       .then((response) => {
         this.getAllGear();
         this.addGearId(response.data.name);
+        this.props.history.push('/collection');
       });
   };
 
@@ -78,12 +79,11 @@ class GearForm extends Component {
           <div className='left-container'>Image Container</div>
           <div className='right-container'>
             <select
-              name='dropdown'
+              name='category'
               className='form-control form-control-lg m-1'
-              value={this.state.category}
               onChange={this.handleChange}
             >
-              <option value=''>Category</option>
+              <option value='' >Category</option>
               <option value='guitar'>Guitar</option>
               <option value='bass'>Bass</option>
               <option value='pedals'>Pedals</option>
@@ -141,7 +141,7 @@ class GearForm extends Component {
               accept='image/*'
               onChange={this.handleChange}
             />
-            <Button color='secondary' size='lg' block>
+            <Button color='secondary' size='lg' block onClick={this.handleSubmit}>
               Submit
             </Button>
           </div>
