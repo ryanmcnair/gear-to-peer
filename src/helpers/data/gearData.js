@@ -16,6 +16,17 @@ const getSingleGear = (gearId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const createGear = (data) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}/gear.json`, data)
+    .then((response) => {
+      const update = { firebaseKey: response.data.name };
+      axios.patch(`${baseUrl}/gear/${response.data.name}.json`, update)
+        .then(() => {
+          resolve(response);
+        });
+    }).catch((error) => reject(error));
+});
+
 const updateGear = (data) => new Promise((resolve, reject) => {
   axios.patch(`${baseUrl}/gear/${data.firebaseKey}.json`, data)
     .then(resolve)
@@ -26,5 +37,5 @@ const deleteGear = (gearId) => axios.delete(`${baseUrl}/gear/${gearId}.json`);
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  getAllGear, deleteGear, getSingleGear, updateGear,
+  getAllGear, deleteGear, getSingleGear, updateGear, createGear,
 };
