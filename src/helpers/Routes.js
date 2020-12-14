@@ -6,6 +6,7 @@ import GearDetails from '../views/GearDetails';
 import GearForm from '../components/GearForm';
 import CollectionContainer from '../components/CollectionContainer';
 import TourContainer from '../components/TourContainer';
+import TourDetails from '../views/TourDetails';
 
 export default function Routes({ user }) {
   return (
@@ -30,6 +31,11 @@ export default function Routes({ user }) {
         exact
         path='/tour'
         component={() => <TourContainer user={user} />}
+      />
+      <Route
+        exact
+        path='/tour/:id'
+        component={(props) => <TourDetails user={user} {...props} />}
       />
       <Route component={NotFound} />
     </Switch>

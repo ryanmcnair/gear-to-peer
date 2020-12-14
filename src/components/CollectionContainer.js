@@ -14,6 +14,9 @@ export default class CollectionContainer extends Component {
     this.getAllGear();
   }
 
+  componentWillUnmount() {
+  }
+
   getAllGear = () => {
     gearData.getAllGear().then((response) => {
       this.setState(
