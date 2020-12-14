@@ -14,6 +14,9 @@ export default class CollectionContainer extends Component {
     this.getAllGear();
   }
 
+  componentWillUnmount() {
+  }
+
   getAllGear = () => {
     gearData.getAllGear().then((response) => {
       this.setState(
@@ -33,7 +36,7 @@ export default class CollectionContainer extends Component {
 
   render() {
     const { loading, gear } = this.state;
-    const showGear = () => gear.map((allGear) => <GearCard key={allGear.id} allGear={allGear} />);
+    const showGear = () => gear.map((allGear) => <GearCard key={allGear.firebaseKey} allGear={allGear} />);
     return (
       <>
         {loading ? (
