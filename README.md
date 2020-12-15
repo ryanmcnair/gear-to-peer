@@ -11,6 +11,9 @@ The tour section is a way to track gear used in a tour or temporary situation. W
 
 When items are in the tour section, users will be able to view the selected gear and also add "tour notes" to the items. Tour notes will only be available in the tour section and will not modify the existing entry within the collection.
 
+## Deployed site
+[Gear to Peer](https://geartopeer.netlify.app/)
+
 ## Wireframe
 [Link](https://www.figma.com/file/5Nj2gvH6QGMjEveFnYoTyG/GeartoPeer?node-id=0%3A1)
 

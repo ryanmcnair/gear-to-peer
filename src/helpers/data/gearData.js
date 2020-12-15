@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://gear-to-peer-default-rtdb.firebaseio.com/';
 
-// Getting, adding, updating and deleting gear from Firebase
+// Retrieves all gear
 
 const getAllGear = () => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/gear.json`).then((response) => {
