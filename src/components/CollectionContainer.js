@@ -7,7 +7,7 @@ import GearCard from './GearCard';
 export default class CollectionContainer extends Component {
   state = {
     gear: [],
-    loading: true,
+    loading: false,
   };
 
   componentDidMount() {
@@ -23,15 +23,8 @@ export default class CollectionContainer extends Component {
         {
           gear: response,
         },
-        this.setLoading,
       );
     });
-  };
-
-  setLoading = () => {
-    this.timer = setInterval(() => {
-      this.setState({ loading: false });
-    }, 1000);
   };
 
   render() {

@@ -3,11 +3,13 @@ import Loader from './Loader';
 import gearData from '../helpers/data/gearData';
 import TourCard from './TourCard';
 import getUid from '../helpers/data/authData';
+import AppModal from './AppModal';
+import TourForm from './TourForm';
 
 export default class TourCountainer extends Component {
   state = {
     tour: [],
-    loading: true,
+    loading: false,
   };
 
   componentDidMount() {
@@ -20,30 +22,28 @@ export default class TourCountainer extends Component {
       this.setState({
         tour: response,
       });
-      this.setLoading();
     });
-  };
-
-  setLoading = () => {
-    this.timer = setInterval(() => {
-      this.setState({ loading: false });
-    }, 1000);
   };
 
   render() {
     const { loading, tour } = this.state;
     const showTour = () => tour.map((allTours) => <TourCard key={allTours.id} allGear={allTours} />);
     return (
-      <>
-      <h1>Tours</h1>
+      <div className='tour-container'>
+      <h1>Your Tours</h1>
         {loading ? (
           <Loader />
         ) : (
           <>
+          <AppModal title={'Add Tour'} buttonLabel={'Add Tour'}>
+            {Object.keys(tour).length && (
+              <TourForm gear={tour} onUpdate={this.getSingleGear} />
+            )}
+          </AppModal>
             <div className='d-flex flex-wrap container'>{showTour()}</div>
           </>
         )}
-      </>
+          </div>
     );
   }
 }

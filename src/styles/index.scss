@@ -6,6 +6,10 @@ body {
   background-color: $favColor;
 }
 
+.tour-container {
+    align-items: center;
+}
+
 .spinner {
     margin-top: 50px;
     display: flex;
