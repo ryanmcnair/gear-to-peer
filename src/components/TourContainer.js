@@ -35,9 +35,9 @@ export default class TourCountainer extends Component {
           <Loader />
         ) : (
           <>
-          <AppModal title={'Add Tour'} buttonLabel={'Add Tour'}>
+          <AppModal title={'Add a tour'} buttonLabel={'Add Tour'}>
             {Object.keys(tour).length && (
-              <TourForm gear={tour} onUpdate={this.getSingleGear} />
+              <TourForm gear={tour} onUpdate={this.getUserTour} />
             )}
           </AppModal>
             <div className='d-flex flex-wrap container'>{showTour()}</div>

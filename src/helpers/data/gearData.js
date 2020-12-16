@@ -47,6 +47,23 @@ const getAllUserTours = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getSingleTour = (tourId) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/tour/${tourId}.json`).then((response) => {
+    resolve(response.data);
+  }).catch((error) => reject(error));
+});
+
+const createTour = (data) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}/tour.json`, data)
+    .then((response) => {
+      const update = { firebaseKey: response.data.name };
+      axios.patch(`${baseUrl}/tour/${response.data.name}.json`, update)
+        .then(() => {
+          resolve(response);
+        });
+    }).catch((error) => reject(error));
+});
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getAllGear,
@@ -55,4 +72,6 @@ export default {
   updateGear,
   createGear,
   getAllUserTours,
+  getSingleTour,
+  createTour,
 };
