@@ -64,6 +64,8 @@ const createTour = (data) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const deleteTour = (tourId) => axios.delete(`${baseUrl}/tour/${tourId}.json`);
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getAllGear,
@@ -74,4 +76,5 @@ export default {
   getAllUserTours,
   getSingleTour,
   createTour,
+  deleteTour,
 };
