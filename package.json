@@ -18,6 +18,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-select": "^3.1.1",
     "react-spinners-kit": "^1.9.1",
     "react-to-pdf": "0.0.13",
     "reactstrap": "^8.7.1",

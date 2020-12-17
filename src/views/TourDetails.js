@@ -26,9 +26,10 @@ export default class TourDetails extends Component {
   };
 
   render() {
+    const { tour } = this.state;
     return (
       <>
-        <h1>Tour Details</h1>
+        <h1>{tour.name}</h1>
         <button className='btn btn-danger m-2' onClick={this.removeTour}>
           Delete
         </button>

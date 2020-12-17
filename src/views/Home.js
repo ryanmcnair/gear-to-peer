@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from '../components/Auth';
 import Loader from '../components/Loader';
-import HomeComponent from '../components/HomeComponent';
+import CollectionContainer from '../components/CollectionContainer';
 
 export default function Home({ user }) {
   const loadComponent = () => {
@@ -9,7 +9,7 @@ export default function Home({ user }) {
     if (user === null) {
       component = <Loader />;
     } else if (user) {
-      component = <HomeComponent />;
+      component = <CollectionContainer />;
     } else {
       component = <Auth />;
     }
@@ -18,7 +18,6 @@ export default function Home({ user }) {
 
   return (
     <div>
-      <h1>Gear to Peer</h1>
       {loadComponent()}
     </div>
   );

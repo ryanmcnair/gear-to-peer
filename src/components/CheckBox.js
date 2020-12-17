@@ -2,7 +2,7 @@ import React from 'react';
 
 export const CheckBox = (props) => (
     <li>
-      <input key={props.id} onClick={props.handleCheckChildElement} type='checkbox' checked={props.isChecked} value={props.value} /> {props.year} {props.brand} {props.model}
+      <input key={props.id} type='checkbox' checked={props.isChecked} name={props.firebaseKey} value={props.firebaseKey} /> {props.year} {props.brand} {props.model}
     </li>
 );
 

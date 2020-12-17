@@ -13,7 +13,21 @@ export default class Auth extends React.Component {
   render() {
     return (
       <div className='Auth'>
-        <Button className='btn btn-secondary' size='lg' color='success' id='box' onClick={this.loginClickEvent}>Sign In</Button>
+        <div className='auth-left'>
+          <h1>Welcome to Gear to Peer</h1>
+          <h2>Online database for musicians</h2>
+        </div>
+        <div className='auth-right'>
+          <Button
+            className='btn btn-secondary'
+            size='lg'
+            color='success'
+            id='box'
+            onClick={this.loginClickEvent}
+          >
+            Sign In
+          </Button>
+        </div>
       </div>
     );
   }

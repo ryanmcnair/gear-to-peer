@@ -84,7 +84,7 @@ class GearForm extends Component {
       <form className='form-page'>
         <h1>Gear Form</h1>
         <div className='form-container'>
-          <div className='left-container'>Image Container</div>
+          <div className='left-container'></div>
           <div className='right-container'>
             <select
               name='category'

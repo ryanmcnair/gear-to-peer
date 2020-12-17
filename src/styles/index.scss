@@ -1,13 +1,42 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import 'variables';
+@import 'collection';
+@import 'tour';
 
 body {
   background-color: $favColor;
+//   background-image: url(https://www.stringjoy.com/wp-content/uploads/2016/08/Guitar-Strings-Order-How-the-Guitar-is-Tuned-and-Why.jpg)
+}
+
+.my-modal {
+    width: 90vw !important;
+}
+
+.Auth {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.auth-left {
+    color: white;
+    background-color: #B0B0B0;
+    padding: 15px;
+    border: black solid 2px;
+    margin-right: 40px;
 }
 
 .tour-container {
     align-items: center;
+}
+
+.left-container {
+    background-image: url(https://cdn.shopify.com/s/files/1/0343/4368/2183/articles/John-Marshall_-1960-Gibson-Les-Paul-Custom-Black-Beauty-SEO_grande.jpg?v=1589566638);
+}
+
+ul {
+    list-style: none;
 }
 
 .spinner {

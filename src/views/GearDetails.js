@@ -31,7 +31,13 @@ class GearDetails extends Component {
     const { gear } = this.state;
     return (
       <div className='single-gear-view'>
-        <h1>{gear.brand}</h1>
+        <div>
+          <h1>
+            {gear.year} {gear.brand} {gear.model}
+          </h1>
+          <img src={gear.imageUrl} alt='' />
+          <h3>Notes: {gear.other_notes}</h3>
+        </div>
         <button className='btn btn-danger m-2' onClick={this.removeGear}>
           Delete
         </button>

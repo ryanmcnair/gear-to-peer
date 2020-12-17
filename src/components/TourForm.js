@@ -9,6 +9,8 @@ export default class TourForm extends Component {
     gear: [],
     firebaseKey: this.props.tour?.firebaseKey || '',
     name: this.props.tour?.name || '',
+    checked: false,
+    tourGear: [],
   };
 
   componentDidMount() {
@@ -26,6 +28,14 @@ export default class TourForm extends Component {
       });
     });
   };
+
+  handleCheckEvent = (e) => {
+    const isChecked = !this.state.checked;
+    this.setState({
+      checked: isChecked,
+      tourGear: isChecked ? this.state.gear : this.state.tourGear,
+    });
+  }
 
   handleChange = (e) => {
     this.setState({
@@ -67,10 +77,9 @@ export default class TourForm extends Component {
             required
           />
           <h3>Select items to add:</h3>
-          <input type='checkbox' name={gear.brand} value={gear.firebaseKey} />
           <ul>
             {gear.map((item) => (
-              <CheckBox {...item} />
+              <CheckBox onChange={this.handleChange} {...item} />
             ))}
           </ul>
         </form>
