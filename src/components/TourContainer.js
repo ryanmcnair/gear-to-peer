@@ -27,7 +27,7 @@ export default class TourCountainer extends Component {
 
   render() {
     const { loading, tour } = this.state;
-    const showTour = () => tour.map((allTours) => <TourCard key={allTours.id} allGear={allTours} />);
+    const showTour = () => tour.map((allTours) => <TourCard key={allTours.firebaseKey} allGear={allTours} />);
     return (
       <div className='tour-container'>
       <h1>Your Tours</h1>
@@ -37,7 +37,7 @@ export default class TourCountainer extends Component {
           <>
           <AppModal title={'Add a tour'} buttonLabel={'Add Tour'}>
             {Object.keys(tour).length && (
-              <TourForm gear={tour} onUpdate={this.getUserTour} />
+              <TourForm key={tour.firebaseKey} tour={tour} onUpdate={this.getUserTour} />
             )}
           </AppModal>
             <div className='d-flex flex-wrap container'>{showTour()}</div>

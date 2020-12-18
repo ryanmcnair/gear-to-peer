@@ -18,7 +18,6 @@ export default function Home({ user }) {
 
   return (
     <div>
-      <h1>Gear to Peer</h1>
       {loadComponent()}
     </div>
   );

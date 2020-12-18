@@ -30,6 +30,7 @@ export default class MyNavbar extends Component {
           </button>
 
           <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
+            {authed && (
             <ul className='navbar-nav mr-auto mt-2 mt-lg-0'>
               <li className='nav-item'>
                 <Link className='nav-link' to='/collection'>
@@ -42,7 +43,7 @@ export default class MyNavbar extends Component {
                 </Link>
               </li>
             </ul>
-
+            )}
             <div className='form-inline my-2 my-lg-0'>
               {authed && (
                 <button

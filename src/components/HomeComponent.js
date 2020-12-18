@@ -4,7 +4,15 @@ class HomeComponent extends Component {
   render() {
     return (
       <div className='home'>
-        <h2>Front page landing</h2>
+        <span className='main-page'>
+          <header>
+            <h2>
+              <i className='fas fa-music'></i> Welcome to Geer to Peer
+              <i className='fas fa-music'></i>
+            </h2>
+          </header>
+          <div></div>
+        </span>
       </div>
     );
   }

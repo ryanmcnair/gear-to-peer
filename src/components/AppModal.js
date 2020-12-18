@@ -15,7 +15,7 @@ const AppModal = (props) => {
       <Button color='success' onClick={toggle}>
         {buttonLabel}
       </Button>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <Modal isOpen={modal} toggle={toggle} className={className} dialogclassname='my-modal'>
         <ModalHeader toggle={toggle}>{title}</ModalHeader>
         <ModalBody>{React.cloneElement(props.children, { toggle })}</ModalBody>
       </Modal>
