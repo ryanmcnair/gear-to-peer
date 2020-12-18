@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Select from 'react-select';
 import gearData from '../helpers/data/gearData';
 import getUser from '../helpers/data/authData';
-// import SelectComponent from './CheckBox';
-// import SmallCard from './SmallCard';
 
 export default class TourForm extends Component {
   state = {
@@ -75,7 +73,6 @@ export default class TourForm extends Component {
   };
 
   render() {
-    // const { gear } = this.state;
     return (
       <>
         <form className='tour-form'>
@@ -99,19 +96,6 @@ export default class TourForm extends Component {
           <Select options={this.state.selectedOptions}
           onChange={this.onChange}
           isMulti />
-          {/* <SelectComponent
-            name='tourGear'
-            options={this.state.selectedOptions}
-            addSelectedOption={this.addSelectedOption}
-          /> */}
-          {/* <ul>
-            {gear.map(() => (
-              <input
-                addSelectedOption={this.addSelectedOption}
-                options={gear.brand}
-              />
-            ))}
-          </ul> */}
         </form>
         <button onClick={this.handleSubmit}>Submit</button>
       </>
