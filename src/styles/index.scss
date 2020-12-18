@@ -9,6 +9,17 @@ body {
 //   background-image: url(https://www.stringjoy.com/wp-content/uploads/2016/08/Guitar-Strings-Order-How-the-Guitar-is-Tuned-and-Why.jpg)
 }
 
+.filter-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.collection-buttons {
+    display: flex;
+    justify-content: center;
+    
+}
+
 .my-modal {
     width: 90vw !important;
 }
@@ -146,3 +157,4 @@ ul {
         animation-timing-function: ease-out;
     }
 }
+

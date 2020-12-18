@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import Select from 'react-select';
 import gearData from '../helpers/data/gearData';
 import getUser from '../helpers/data/authData';
-import { CheckBox } from './CheckBox';
+// import SelectComponent from './CheckBox';
 // import SmallCard from './SmallCard';
 
 export default class TourForm extends Component {
@@ -10,7 +11,7 @@ export default class TourForm extends Component {
     firebaseKey: this.props.tour?.firebaseKey || '',
     name: this.props.tour?.name || '',
     checked: false,
-    tourGear: [],
+    selectedOptions: [],
   };
 
   componentDidMount() {
@@ -23,19 +24,33 @@ export default class TourForm extends Component {
 
   getAllGear = () => {
     gearData.getAllGear().then((response) => {
+      const selectedOptions = response.map((item) => (
+        {
+          value: item.firebaseKey,
+          label: item.model,
+        }
+      ));
       this.setState({
         gear: response,
+        selectedOptions,
       });
     });
   };
 
-  handleCheckEvent = (e) => {
-    const isChecked = !this.state.checked;
+  addSelectedOption = (name, options) => {
+    this.setState(({ selectedOptions }) => ({
+      selectedOptions: {
+        ...selectedOptions,
+        [name]: options,
+      },
+    }));
+  };
+
+  onChange = (e) => {
     this.setState({
-      checked: isChecked,
-      tourGear: isChecked ? this.state.gear : this.state.tourGear,
+      selected: e,
     });
-  }
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -46,7 +61,13 @@ export default class TourForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.firebaseKey === '') {
-      gearData.createTour(this.state).then(() => {
+      const object = {
+        gear: this.state.selected,
+        userId: this.state.userId,
+        name: this.state.name,
+        description: this.state.description,
+      };
+      gearData.createTour(object).then(() => {
         this.props.onUpdate();
       });
     }
@@ -54,7 +75,7 @@ export default class TourForm extends Component {
   };
 
   render() {
-    const { gear } = this.state;
+    // const { gear } = this.state;
     return (
       <>
         <form className='tour-form'>
@@ -65,7 +86,6 @@ export default class TourForm extends Component {
             onChange={this.handleChange}
             className='form-control form-control-lg m-1'
             placeholder='Name'
-            required
           />
           <input
             type='text'
@@ -74,14 +94,24 @@ export default class TourForm extends Component {
             onChange={this.handleChange}
             className='form-control form-control-lg m-1'
             placeholder='Description'
-            required
           />
           <h3>Select items to add:</h3>
-          <ul>
-            {gear.map((item) => (
-              <CheckBox onChange={this.handleChange} {...item} />
+          <Select options={this.state.selectedOptions}
+          onChange={this.onChange}
+          isMulti />
+          {/* <SelectComponent
+            name='tourGear'
+            options={this.state.selectedOptions}
+            addSelectedOption={this.addSelectedOption}
+          /> */}
+          {/* <ul>
+            {gear.map(() => (
+              <input
+                addSelectedOption={this.addSelectedOption}
+                options={gear.brand}
+              />
             ))}
-          </ul>
+          </ul> */}
         </form>
         <button onClick={this.handleSubmit}>Submit</button>
       </>

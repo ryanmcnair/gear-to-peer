@@ -14,7 +14,7 @@ export default class MyNavbar extends Component {
     return (
       <div className='MyNavbar'>
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-          <Link className='navbar-brand' to='/collection'>
+          <Link className='navbar-brand' to='/'>
             Gear To Peer
           </Link>
           <button
