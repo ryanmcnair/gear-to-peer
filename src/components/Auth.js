@@ -21,7 +21,7 @@ export default class Auth extends React.Component {
           <Button
             className='btn btn-secondary'
             size='lg'
-            color='success'
+            color='dark'
             id='box'
             onClick={this.loginClickEvent}
           >

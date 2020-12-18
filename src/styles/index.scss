@@ -6,7 +6,11 @@
 
 body {
   background-color: $favColor;
-//   background-image: url(https://www.stringjoy.com/wp-content/uploads/2016/08/Guitar-Strings-Order-How-the-Guitar-is-Tuned-and-Why.jpg)
+  background-image: url(https://user-images.githubusercontent.com/67588177/102616094-a212a800-40fc-11eb-889a-c8009e1eab81.jpeg)
+}
+
+.custom-dialog {
+    max-width: none;
 }
 
 .filter-buttons {
@@ -69,6 +73,7 @@ ul {
 }
 
 .left-container {
+    margin-right: 15px;
     background-color: lightpink;
     overflow: hidden;
     padding: 40px 0 0 0;
@@ -80,7 +85,7 @@ ul {
 .right-container {
     display: grid;
     grid-template-areas: "." ".";
-    width: 500px;
+    width: 400px;
 }
 
 .set1 {

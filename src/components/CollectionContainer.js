@@ -64,15 +64,15 @@ export default class CollectionContainer extends Component {
           <Loader />
         ) : (
           <>
-            <div className='filter-buttons btn btn-warning'>
+            <div className='filter-buttons mt-3'>
               {buttons.map(({ name, value }) => (
-                <button className='btn btn-success' key={name} value={value} onClick={this.handleClick}>
+                <button className='btn btn-dark' key={name} value={value} onClick={this.handleClick}>
                   {name}
                 </button>
               ))}
             </div>
-            <div className='collection-buttons'>
-              <Link className='btn btn-primary' to={'gear-form'}>
+            <div className='collection-buttons mt-2'>
+              <Link className='btn btn-dark' to={'gear-form'}>
                 Add Gear
               </Link>
             </div>
