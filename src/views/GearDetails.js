@@ -32,11 +32,14 @@ class GearDetails extends Component {
     return (
       <div className='single-gear-view'>
         <div>
-          <h1>
+          <h1 style={{ color: '#d8d8d8' }}>
             {gear.year} {gear.brand} {gear.model}
           </h1>
           <img src={gear.imageUrl} alt='' />
-          <h3>Notes: {gear.other_notes}</h3>
+          <h3 style={{ color: '#d8d8d8' }}>Notes: {gear.other_notes}</h3>
+          <h3 style={{ color: '#d8d8d8' }}>
+            Serial Number: {gear.serial_number}
+          </h3>
         </div>
         <button className='btn btn-danger m-2' onClick={this.removeGear}>
           Delete

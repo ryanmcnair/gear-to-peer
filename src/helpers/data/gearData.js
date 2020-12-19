@@ -66,6 +66,25 @@ const createTour = (data) => new Promise((resolve, reject) => {
 
 const deleteTour = (tourId) => axios.delete(`${baseUrl}/tour/${tourId}.json`);
 
+const updateTour = (data) => new Promise((resolve, reject) => {
+  axios.patch(`${baseUrl}/tour/${data.firebaseKey}.json`, data)
+    .then(resolve)
+    .catch((error) => reject(error));
+});
+
+const filterTourGear = (tourId) => new Promise((resolve, reject) => {
+  getSingleTour(tourId).then((response) => {
+    const tour = response;
+    const gearArray = [];
+    tour.forEach((tours) => {
+      tours.gears.forEach((item) => {
+        gearArray.push(item);
+      });
+    });
+    resolve(gearArray);
+  }).catch((error) => reject(error));
+});
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   getAllGear,
@@ -77,4 +96,6 @@ export default {
   getSingleTour,
   createTour,
   deleteTour,
+  updateTour,
+  filterTourGear,
 };

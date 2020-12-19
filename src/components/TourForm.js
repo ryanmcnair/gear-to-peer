@@ -8,7 +8,8 @@ export default class TourForm extends Component {
     gear: [],
     firebaseKey: this.props.tour?.firebaseKey || '',
     name: this.props.tour?.name || '',
-    checked: false,
+    description: this.props.tour?.description || '',
+    gears: this.props.tour?.gears || '',
     selectedOptions: [],
   };
 
@@ -60,7 +61,7 @@ export default class TourForm extends Component {
     e.preventDefault();
     if (this.state.firebaseKey === '') {
       const object = {
-        gear: this.state.selected,
+        gears: this.state.selected,
         userId: this.state.userId,
         name: this.state.name,
         description: this.state.description,
@@ -68,6 +69,11 @@ export default class TourForm extends Component {
       gearData.createTour(object).then(() => {
         this.props.onUpdate();
       });
+    } else {
+      gearData.updateTour(this.state)
+        .then(() => {
+          this.props.onUpdate(this.props.tour.firebaseKey);
+        });
     }
     this.props.toggle();
   };
