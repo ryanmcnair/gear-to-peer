@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from '../views/NotFound';
 import Home from '../views/Home';
-import GearDetails from '../views/GearDetails';
+import GearDetailsToPrint from '../components/PrintDetails';
 import GearForm from '../components/GearForm';
 import CollectionContainer from '../components/CollectionContainer';
 import TourContainer from '../components/TourContainer';
@@ -20,7 +20,7 @@ export default function Routes({ user }) {
       <Route
         exact
         path='/gear/:id'
-        component={(props) => <GearDetails user={user} {...props} />}
+        component={(props) => <GearDetailsToPrint user={user} {...props} />}
       />
       <Route
         exact

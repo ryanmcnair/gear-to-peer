@@ -6,7 +6,7 @@ class HomeComponent extends Component {
       <div className='home'>
         <span className='main-page'>
           <header>
-            <h2>
+            <h2 className='mt-5'>
               <i className='fas fa-music'></i> Welcome to Geer to Peer
               <i className='fas fa-music'></i>
             </h2>
