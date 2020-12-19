@@ -46,11 +46,11 @@ export default class TourDetails extends Component {
         <h2>{tour.description}</h2>
         <h2>Gear used: </h2>
         <ul>
-          <li>
+          <span>
             {tourGear && tourGear.map(({ label, value }) => (
                 <Link key={value} to={`/gear/${value}`}>{label}</Link>
             ))}
-          </li>
+          </span>
         </ul>
       </>
     );

@@ -32,6 +32,9 @@ class GearDetails extends Component {
     return (
       <div className='single-gear-view'>
         <div>
+          <button className='btn btn-dark mt-4' onClick={() => window.print()}>
+            PDF
+          </button>
           <h1 style={{ color: '#d8d8d8' }}>
             {gear.year} {gear.brand} {gear.model}
           </h1>
