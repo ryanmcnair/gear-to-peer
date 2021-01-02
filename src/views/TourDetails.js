@@ -46,9 +46,9 @@ export default class TourDetails extends Component {
         <h2>{tour.description}</h2>
         <h2>Gear used: </h2>
         <ul>
-          <span>
+          <span className='tour-box'>
             {tourGear && tourGear.map(({ label, value }) => (
-                <Link key={value} to={`/gear/${value}`}>{label}</Link>
+                <Link key={value} to={`/gear/${value}`} className='tour-list'>{label}</Link>
             ))}
           </span>
         </ul>

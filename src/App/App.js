@@ -3,7 +3,7 @@ import firebase from 'firebase/app';
 import { BrowserRouter as Router } from 'react-router-dom';
 import fbConnection from '../helpers/data/connection';
 import './App.scss';
-import MyNavbar from '../components/MyNavbar';
+import MyNavbar from '../components/MyNavbarTwo';
 import Routes from '../helpers/Routes';
 
 fbConnection();
@@ -31,7 +31,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <Router>
-          <MyNavbar authed={user} />
+          <MyNavbar user={user} />
           <Routes user={user} />
         </Router>
       </div>

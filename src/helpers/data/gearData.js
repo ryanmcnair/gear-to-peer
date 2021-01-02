@@ -39,8 +39,8 @@ const deleteGear = (gearId) => axios.delete(`${baseUrl}/gear/${gearId}.json`);
 
 // Tour functions
 
-const getAllUserTours = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${baseUrl}tour.json?orderBy="userId"&equalTo="${uid}"`)
+const getAllUserTours = () => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}tour.json`)
     .then((response) => {
       resolve(Object.values(response.data));
     })
