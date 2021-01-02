@@ -46,6 +46,7 @@ export default class TourForm extends Component {
   };
 
   onChange = (e) => {
+    console.warn(e);
     this.setState({
       selected: e,
     });

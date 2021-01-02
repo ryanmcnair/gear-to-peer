@@ -97,6 +97,25 @@ ul {
     justify-content: space-between;
 }
 
+.img-container {
+    height: 300px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    object-fit: contain;
+}
+
+.tour-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tour-list {
+    display: flex;
+    flex-direction: column;
+}
+
 #box {
     margin-top: 10%;
     animation: bounce-in 3s linear 1;
