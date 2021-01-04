@@ -27,7 +27,13 @@ export default class TourCountainer extends Component {
 
   render() {
     const { loading, tour } = this.state;
-    const showTour = () => tour.map((allTours) => <TourCard key={allTours.firebaseKey} allGear={allTours} />);
+    const showTour = () => (
+      tour.length
+        ? tour.map((allTours) => <TourCard key={allTours.firebaseKey} allGear={allTours} />)
+        : (
+          <h2>No Tours</h2>
+        )
+    );
     return (
       <div className='tour-container'>
       <h1>Your Tours</h1>
