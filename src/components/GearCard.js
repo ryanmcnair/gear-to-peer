@@ -9,7 +9,7 @@ export default function GearCard({ allGear }) {
       <div className='card-body'>
         <p className='card-text'>{allGear.description}</p>
         <Link className='btn btn-primary' to={`/gear/${allGear.firebaseKey}`}>
-          Gear Details
+          Details
         </Link>
       </div>
     </div>

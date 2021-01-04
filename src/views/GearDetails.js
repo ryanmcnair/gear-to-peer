@@ -38,7 +38,7 @@ class GearDetails extends Component {
           <h1 style={{ color: '#d8d8d8' }}>
             {gear.year} {gear.brand} {gear.model}
           </h1>
-          <img src={gear.imageUrl} alt='' />
+          <img src={gear.imageUrl} alt='' className='gear-image' />
           <h3 style={{ color: '#d8d8d8' }}>Notes: {gear.other_notes}</h3>
           <h3 style={{ color: '#d8d8d8' }}>
             Serial Number: {gear.serial_number}

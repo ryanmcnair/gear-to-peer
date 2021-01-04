@@ -60,6 +60,27 @@ ul {
     justify-content: center;
 }
 
+// .tour-details-container {
+//     display: grid;
+//     grid-template-areas: "left right";
+// }
+
+// .used-left {
+//     margin-left: 200px;
+//     margin-right: 15px;
+//     overflow: hidden;
+//     padding: 40px 0 0 0;
+//     position: relative;
+//     text-align: center;
+//     width: 300px;
+// }
+
+// .used-right {
+//     display: grid;
+//     grid-template-areas: "." ".";
+//     width: 400px;
+// }
+
 .form-page {
     align-items: center;
     display: grid;
@@ -97,12 +118,29 @@ ul {
     justify-content: space-between;
 }
 
+.gear-image {
+    max-height: 450px;
+    max-width: 450px;
+}
+
 .img-container {
-    height: 300px;
-    width: 250px;
+    height: 350px;
+    width: 350px;
     background-size: cover;
     background-position: center;
     object-fit: contain;
+}
+
+.tour-details {
+    display: flex;
+    justify-content: center;
+}
+
+.tour-description {
+    margin-top: 25px;
+    border: black 2px solid;
+    width: 600px;
+    background-color: wheat;
 }
 
 .tour-box {
